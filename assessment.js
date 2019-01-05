@@ -6,6 +6,11 @@
  */
 
 // CODE HERE
+var me = {
+  firstname: "Brittany",
+  age: 25,
+  state: "Arizona"
+};
 
 /**
  * #2
@@ -15,6 +20,7 @@
  */
 
 // CODE HERE
+me.faveColor = "Purple";
 
 /**
  * #3
@@ -30,7 +36,7 @@ var message = {
 };
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
-
+message["text"] = "Hellooooooo";
 /**
  * #4
  *
@@ -40,7 +46,17 @@ var message = {
  */
 
 // CODE HERE
+var adjustCount = {
+  upVote: function(num){
+    num += 1;
+    return num;
+  },
+  downVote: function(num){
+    num -= 1;
+    return num;
 
+  }
+}
 /**
  * #5
  *
@@ -48,7 +64,7 @@ var message = {
  */
 
 // CODE HERE
-
+var myFriends = ["Blake", "Rachel", "Justin", "Jessica"];
 /**
  * #6
  *
@@ -56,7 +72,7 @@ var message = {
  */
 
 // CODE HERE
-
+myFriends.splice(4,0,"Harriet");
 /**
  * #7
  *
@@ -68,7 +84,7 @@ var message = {
 var myArray = [1, 2, 3, 4];
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
-
+myArrayCopy = myArray.slice(0, 4);
 /**
  * #8
  *
@@ -81,8 +97,15 @@ var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
 function evensOnly() {
   // CODE HERE
+var evenNumbers = [];
+  for (i=0; i<myNumbers.length; i++) {
+    if (myNumbers[i] % 2 === 0) {
+      evenNumbers.push(myNumbers[i]);
+    }
+  }
+  return evenNumbers;
 }
-
+evensOnly();
 /**
  * #9
  *
@@ -100,13 +123,26 @@ var peopleIknow = [
   { name: "Holly", friend: true }
 ];
 
+var trueFriends = peopleIknow.filter(function(person){
+  return person.friend === true
+});
 /**
  * #10
  *
- * Create a function called 'indexFinder' that loops over an array and returns a new array
- * of the indexes of the array passed into the function. For example, passing the array [243, 123, 4, 12]
- * into the function would return [0,1,2,3]. Create a new variable called 'indexes' and set it to contain
- * the indexes of 'randomNumbers'.
+ * Create a function called 'indexFinder' that loops over an array and returns a new array of the indexes of the array passed into the function. For example, passing the array [243, 123, 4, 12]
+ * into the function would return [0,1,2,3]. Create a new variable called 'indexes' and set it to contain the indexes of 'randomNumbers'.
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+
+var indexes = [];
+function indexFinder (arr){
+  for (i=0 ;i < arr.length; i++){
+    indexes.push(i);
+  };
+  return indexes;
+};
+indexFinder(randomNumbers);
+
+//i'll need to use a for loop to loop over the array so that it only loops the amount of times that there are items in the loops
+//then i need to PUSH the index numbers to the new array
